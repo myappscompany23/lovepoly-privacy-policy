@@ -1,151 +1,268 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy – Lovepoly</title>
-  <meta name="description" content="Privacy Policy for the Lovepoly mobile app." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://your-domain.github.io/privacy-policy" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Lovepoly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #ffffff;
-      --fg: #0f172a; /* slate-900 */
-      --muted: #475569; /* slate-600 */
-      --card: #f8fafc; /* slate-50 */
-      --border: #e2e8f0; /* slate-200 */
-      --link: #2563eb; /* blue-600 */
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg: #0b1220;
-        --fg: #e5e7eb;
-        --muted: #94a3b8;
-        --card: #0f172a;
-        --border: #1f2937;
-        --link: #60a5fa;
-      }
-    }
-    html,body{height:100%}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg); color: var(--fg); line-height: 1.65;
-    }
-    .wrap{max-width: 860px; margin: 0 auto; padding: 32px 20px 64px;}
-    header{padding: 20px 0 8px;}
-    h1{font-size: 2rem; margin: 0 0 4px;}
-    .meta{color: var(--muted); font-size: .95rem;}
-    .card{background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px;}
-    h2{margin-top: 28px; font-size: 1.3rem}
-    h3{margin-top: 20px; font-size: 1.05rem}
-    ul{padding-left: 22px}
-    a{color: var(--link); text-decoration: none}
-    a:hover{text-decoration: underline}
-    footer{margin-top: 36px; font-size: .9rem; color: var(--muted)}
-    .divider{height:1px; background: var(--border); margin: 20px 0}
+    :root {
+  --primary-color: #4a90e2;
+  --secondary-color: #50e3c2;
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --heading-color: #4a90e2;
+}
+
+* {box-sizing: border-box;margin: 0;padding: 0;}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  /* altına fazladan boşluk verdik */
+  padding: 3rem 1rem 5rem 1rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  position: relative;
+}
+
+.language-switch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 900px;
+  /* yukarıya çıkmayı azalttık */
+  margin: -3rem auto 2rem auto;
+  padding: 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-left: 4px solid var(--secondary-color);
+  padding-left: 0.8rem;
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p, li {margin-bottom: 0.6rem;}
+
+ul {padding-left: 1.2rem;margin-bottom: 0.6rem;}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {text-decoration: underline;}
+
+.hidden {display: none;}
+
+@media (max-width: 600px) {
+  header h1 {font-size: 1.6rem;}
+  main {margin: -2rem 1rem 2rem 1rem;}
+}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Privacy Policy for Lovepoly</h1>
-      <div class="meta">Effective Date: 06.06.2025</div>
-    </header>
+  <header>
+    <div class="lang-select">
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+      </select>
+    </div>
+    <h1 id="title">Privacy Policy for Lovepoly</h1>
+    <p id="effective">Effective Date: 26.09.2025</p>
+  </header>
 
-    <main class="card" role="main">
-      <p>
-        Lovepoly ("we", "our", or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("App"). Please read this policy carefully to understand our views and practices regarding your personal data.
-      </p>
+  <main>
+    <div id="content-en" class="policy-content">
+      <div class="card">
+        <p>Lovepoly ("we", "our", or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("App"). Please read this policy carefully to understand our views and practices regarding your personal data.</p>
+        <p>By using the App, you agree to the collection and use of information in accordance with this policy, including our practices described below.</p>
+      </div>
 
-      <h2>1. Information We Collect</h2>
+      <div class="card">
+        <h2>1. Information We Collect</h2>
+        <h3>a. Personal Information</h3>
+        <p>We do not require you to provide personally identifiable information to use the App. However, if you voluntarily provide us with information (e.g., through customer support), we may collect it.</p>
+        <h3>b. Usage and Device Information</h3>
+        <ul>
+          <li>Device type and model</li>
+          <li>Operating system version</li>
+          <li>Unique device identifiers</li>
+          <li>IP address</li>
+          <li>App usage data and interaction events</li>
+        </ul>
+        <h3>c. Analytics Data</h3>
+        <p>We use Firebase Analytics to collect and analyze usage patterns to improve the App's functionality and user experience.</p>
+        <h3>d. Advertising Data</h3>
+        <p>We display ads served by Google Ads. Google Ads may collect data about your interaction with ads, device information, and other identifiers to deliver personalized ads.</p>
+      </div>
 
-      <h3>a. Personal Information</h3>
-      <p>
-        We do not require you to provide personally identifiable information to use the App. However, if you voluntarily provide us with information (e.g., through customer support), we may collect it.
-      </p>
+      <div class="card">
+        <h2>2. In-App Purchases and Refund Policy</h2>
+        <p>Our App offers consumable in-app purchases (such as coins or credits). These purchases are processed securely through Google Play or the Apple App Store. <strong>Consumable in-app purchases are non-refundable</strong>, except where required by law or the respective store’s policies.</p>
+      </div>
 
-      <h3>b. Usage and Device Information</h3>
-      <p>We automatically collect certain information about your device and how you use the App, including but not limited to:</p>
-      <ul>
-        <li>Device type and model</li>
-        <li>Operating system version</li>
-        <li>Unique device identifiers</li>
-        <li>IP address</li>
-        <li>App usage data and interaction events</li>
-      </ul>
+      <div class="card">
+        <h2>3. Guest Accounts</h2>
+        <p>You may use the App as a guest without creating an account. However, <strong>if you make in-app purchases as a guest, these purchases may be tied to your device and may not be transferable to another device.</strong> For your security and to ensure your purchases are safely stored, we strongly recommend creating an account before making in-app purchases.</p>
+      </div>
 
-      <h3>c. Analytics Data</h3>
-      <p>
-        We use Firebase Analytics to collect and analyze usage patterns to improve the App's functionality and user experience. Firebase Analytics collects information such as events, user engagement, and device data.
-      </p>
+      <div class="card">
+        <h2>4. Your Rights</h2>
+        <ul>
+          <li>Opt-Out of Personalized Ads via device settings or Google’s Ad Settings.</li>
+          <li>Access or delete data by contacting <a href="mailto:contactmyappscompany23@gmail.com">contactmyappscompany23@gmail.com</a>.</li>
+        </ul>
+      </div>
 
-      <h3>d. Advertising Data</h3>
-      <p>
-        We display ads served by Google Ads within the App. Google Ads may collect data about your interaction with ads, device information, and other identifiers to deliver personalized ads.
-      </p>
+      <div class="card">
+        <h2>5. Acceptance of Policy</h2>
+        <p>By using the App, you acknowledge that you have read and agree to this Privacy Policy, including our in-app purchase and guest account practices described above.</p>
+      </div>
 
-      <h2>2. How We Use Your Information</h2>
-      <p>We use the collected data to:</p>
-      <ul>
-        <li>Provide, maintain, and improve the App and its features.</li>
-        <li>Analyze usage trends to enhance user experience.</li>
-        <li>Deliver personalized advertisements based on your interests.</li>
-        <li>Respond to customer support inquiries.</li>
-        <li>Comply with legal obligations.</li>
-      </ul>
+      <div class="card">
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy, please contact us at: <a href="mailto:contactmyappscompany23@gmail.com">contactmyappscompany23@gmail.com</a></p>
+      </div>
+    </div>
 
-      <h2>3. Sharing Your Information</h2>
-      <p>
-        We do not sell your personal information. However, we may share data with third parties under the following circumstances:
-      </p>
-      <ul>
-        <li><strong>Service Providers:</strong> We share data with service providers such as Firebase and Google Ads who help us operate and improve the App. These providers have their own privacy policies.</li>
-        <li><strong>Legal Requirements:</strong> We may disclose information if required by law or to protect our rights.</li>
-      </ul>
+    <div id="content-tr" class="policy-content" style="display:none;">
+      <div class="card">
+        <p>Lovepoly (“biz”, “uygulamamız”) gizliliğinize saygı duyar ve kişisel bilgilerinizi korumayı taahhüt eder. Bu Gizlilik Politikası, uygulamamızı (“Uygulama”) kullanırken bilgilerinizi nasıl topladığımızı, kullandığımızı, açıkladığımızı ve koruduğumuzu açıklar.</p>
+        <p>Uygulamayı kullanarak bu politikada açıklanan bilgilerin toplanmasını ve kullanılmasını kabul etmiş olursunuz.</p>
+      </div>
 
-      <h2>4. Your Choices and Rights</h2>
-      <ul>
-        <li><strong>Opt-Out of Personalized Ads:</strong> You can opt out of personalized advertising by adjusting your device settings or through Google’s Ad Settings.</li>
-        <li><strong>Disable Analytics:</strong> Some versions of the App may allow you to disable analytics tracking.</li>
-        <li><strong>Access and Correction:</strong> Although we do not collect much personal data, if you request, we will provide access to any data we hold about you and correct inaccuracies.</li>
-      </ul>
+      <div class="card">
+        <h2>1. Topladığımız Bilgiler</h2>
+        <h3>a. Kişisel Bilgiler</h3>
+        <p>Uygulamayı kullanmak için kimliğinizi belirleyen bilgileri vermeniz gerekmez. Ancak bize gönüllü olarak bilgi verirseniz (ör. destek yoluyla), bunları toplayabiliriz.</p>
+        <h3>b. Kullanım ve Cihaz Bilgileri</h3>
+        <ul>
+          <li>Cihaz türü ve modeli</li>
+          <li>İşletim sistemi sürümü</li>
+          <li>Benzersiz cihaz tanımlayıcıları</li>
+          <li>IP adresi</li>
+          <li>Uygulama kullanım verisi ve etkileşim olayları</li>
+        </ul>
+        <h3>c. Analitik Veriler</h3>
+        <p>Kullanım alışkanlıklarını analiz etmek için Firebase Analytics kullanıyoruz.</p>
+        <h3>d. Reklam Verileri</h3>
+        <p>Uygulamada Google Ads tarafından sunulan reklamlar gösterilmektedir. Google Ads reklamlarla etkileşiminiz hakkında veri toplayabilir.</p>
+      </div>
 
-      <h2>5. Data Security</h2>
-      <p>
-        We implement reasonable technical and organizational measures to protect your data from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.
-      </p>
+      <div class="card">
+        <h2>2. Uygulama İçi Satın Alımlar ve İade Politikası</h2>
+        <p>Uygulamamızda tüketilebilir ürünler (ör. coin veya kredi) satılmaktadır. Bu satın alımlar Google Play veya Apple App Store üzerinden güvenli şekilde işlenir. <strong>Tüketilebilir uygulama içi satın alımlar iade edilmez</strong> (kanunen gerekmedikçe veya ilgili mağaza politikaları gereği dışında).</p>
+      </div>
 
-      <h2>6. Children’s Privacy</h2>
-      <p>
-        Our App is not intended for children under 18. We do not knowingly collect personal information from children under this age. If you believe we have inadvertently collected such data, please contact us to request deletion.
-      </p>
+      <div class="card">
+        <h2>3. Misafir Hesaplar</h2>
+        <p>Uygulamayı misafir olarak kullanabilirsiniz. Ancak <strong>misafir olarak satın alım yaparsanız bu satın alımlar cihazınıza bağlı olabilir ve başka bir cihaza aktarılamayabilir.</strong> Güvenliğiniz için ve satın alımlarınızın korunması adına satın almadan önce bir hesap oluşturmanızı öneririz.</p>
+      </div>
 
-      <h2>7. International Data Transfers</h2>
-      <p>
-        Since we operate globally, your data may be transferred and processed outside of your country of residence. We take steps to ensure such transfers comply with applicable data protection laws.
-      </p>
+      <div class="card">
+        <h2>4. Haklarınız</h2>
+        <ul>
+          <li>Kişiselleştirilmiş reklamları cihaz ayarlarından veya Google Reklam Ayarlarından devre dışı bırakabilirsiniz.</li>
+          <li><a href="mailto:contactmyappscompany23@gmail.com">contactmyappscompany23@gmail.com</a> adresinden bize ulaşarak verilerinize erişebilir veya sildirebilirsiniz.</li>
+        </ul>
+      </div>
 
-      <h2>8. Changes to This Privacy Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We encourage you to review this page periodically.
-      </p>
+      <div class="card">
+        <h2>5. Politikayı Kabul</h2>
+        <p>Uygulamayı kullanarak bu Gizlilik Politikasını, uygulama içi satın alma ve misafir hesap uygulamalarımızı kabul etmiş olursunuz.</p>
+      </div>
 
-      <h2>9. Contact Us</h2>
-      <p>
-        If you have any questions or concerns about this Privacy Policy, please contact us at:<br />
-        <a href="mailto:contactmyappscompany23@gmail.com">contactmyappscompany23@gmail.com</a>
-      </p>
+      <div class="card">
+        <h2>6. İletişim</h2>
+        <p>Sorularınız için bizimle iletişime geçin: <a href="mailto:contactmyappscompany23@gmail.com">contactmyappscompany23@gmail.com</a></p>
+      </div>
+    </div>
+  </main>
 
-      <div class="divider"></div>
-      <footer>
-        © <span id="year"></span> Lovepoly. All rights reserved.
-      </footer>
-    </main>
-  </div>
+  <footer>
+    &copy; 2025 Lovepoly. All rights reserved.
+  </footer>
 
   <script>
-    // Update year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const languageSelect = document.getElementById('languageSelect');
+    const contentEn = document.getElementById('content-en');
+    const contentTr = document.getElementById('content-tr');
+    const title = document.getElementById('title');
+    const effective = document.getElementById('effective');
+
+    languageSelect.addEventListener('change', () => {
+      if (languageSelect.value === 'en') {
+        contentEn.style.display = 'block';
+        contentTr.style.display = 'none';
+        title.textContent = 'Privacy Policy for Lovepoly';
+        effective.textContent = 'Effective Date: 06.06.2025';
+      } else {
+        contentEn.style.display = 'none';
+        contentTr.style.display = 'block';
+        title.textContent = 'Lovepoly Gizlilik Politikası';
+        effective.textContent = 'Yürürlük Tarihi: 06.06.2025';
+      }
+    });
   </script>
 </body>
 </html>
